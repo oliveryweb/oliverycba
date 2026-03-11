@@ -65,7 +65,7 @@
 
         /* Navigation */
         nav {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -857,20 +857,20 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
                 max-width: 100%;
                 margin: 0;
                 width: 100%;
-                padding: 0 0.5rem;
+                padding: 0 1rem;
             }
 
             .product-card:last-child:nth-child(odd) {
                 grid-column: 1 / -1;
-                max-width: 55%;
-                margin-left: auto;
-                margin-right: auto;
-                justify-self: center;
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                justify-self: stretch;
             }
 
             section {
@@ -1390,9 +1390,7 @@ Hacé tu pedido
 
 <ul class="nav-links">
 <li><a href="#productos">Productos</a></li>
-<li><a href="#nosotros">Nosotros</a></li>
 <li><a href="#premios">Premios Internacionales</a></li>
-<li><a href="#contacto">Contacto</a></li>
 </ul>
 </div>
 </nav>
