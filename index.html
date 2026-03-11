@@ -426,7 +426,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 3rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -942,6 +942,14 @@
                 width: 100%;
                 padding: 0;
                 justify-items: stretch;
+            }
+
+            .product-card:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+                max-width: calc(50% - 0.45rem);
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
             }
 
             section {
