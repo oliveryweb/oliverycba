@@ -881,6 +881,12 @@
                 padding-right: 0;
             }
 
+            .hero {
+                min-height: auto;
+                padding-top: 6rem;
+                padding-bottom: 3rem;
+            }
+
             .products-section {
                 padding-left: 0;
                 padding-right: 0;
@@ -1006,8 +1012,8 @@
         /* Animations on scroll */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
         .fade-in.visible {
@@ -1892,21 +1898,32 @@ Hacé tu pedido
             applyFilter(initialTab.dataset.category);
         }
 
-        // Fade in on scroll
+        // Fade in on scroll — mobile-friendly: sin margen negativo, threshold 0
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0,
+            rootMargin: '0px 0px 0px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Forzar visible en elementos ya en viewport al cargar (crítico en mobile)
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 100);
 
         // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
