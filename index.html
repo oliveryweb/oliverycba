@@ -304,6 +304,7 @@
             object-fit: contain;
             margin-bottom: 2rem;
             transition: transform 0.5s ease;
+            cursor: zoom-in;
         }
 
         .product-card:hover .product-image {
@@ -609,10 +610,58 @@
 
             .products-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.2rem;
             }
 
             section {
                 padding: 5rem 5%;
+            }
+
+            .product-card {
+                padding: 1.2rem 1rem;
+            }
+
+            .product-image {
+                height: 140px;
+                margin-bottom: 1rem;
+            }
+
+            .product-brand {
+                font-size: 0.55rem;
+                letter-spacing: 0.18em;
+            }
+
+            .product-name {
+                font-size: 1.05rem;
+            }
+
+            .product-variety {
+                font-size: 0.9rem;
+            }
+
+            .product-size {
+                font-size: 0.75rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .product-price {
+                font-size: 1.2rem;
+                margin-bottom: 0.9rem;
+            }
+
+            .product-price span {
+                font-size: 0.75rem;
+            }
+
+            .qty-select {
+                margin-bottom: 0.7rem;
+                font-size: 0.6rem;
+            }
+
+            .btn-add {
+                padding: 0.7rem 1rem;
+                font-size: 0.65rem;
+                letter-spacing: 0.08em;
             }
         }
 
@@ -626,6 +675,50 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Image Lightbox */
+        .image-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            z-index: 2000;
+            padding: 1.5rem;
+        }
+
+        .image-lightbox.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .image-lightbox img {
+            max-width: min(90vw, 720px);
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            background: var(--cream);
+            padding: 1rem;
+        }
+
+        .image-lightbox .close-btn {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            background: rgba(245, 242, 235, 0.9);
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            cursor: pointer;
         }
     
         .qty-select {
@@ -1270,6 +1363,49 @@
         // Category filter
         const categoryTabs = document.querySelectorAll('.category-tab');
         const productCards = document.querySelectorAll('.product-card');
+        const productImages = document.querySelectorAll('.product-image');
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+        const lightboxClose = lightbox ? lightbox.querySelector('.close-btn') : null;
+
+        const openLightbox = (src, alt) => {
+            if (!lightbox || !lightboxImg) return;
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || 'Imagen ampliada';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeLightbox = () => {
+            if (!lightbox || !lightboxImg) return;
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImg.src = '';
+        };
+
+        productImages.forEach(image => {
+            image.addEventListener('click', () => {
+                openLightbox(image.src, image.alt);
+            });
+        });
+
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
 
         const applyFilter = (category) => {
             productCards.forEach(card => {
@@ -1574,6 +1710,11 @@
         renderCart();
         });
 </script>
+
+<div aria-hidden="true" class="image-lightbox" id="imageLightbox">
+<button aria-label="Cerrar imagen" class="close-btn" type="button">×</button>
+<img alt="" src=""/>
+</div>
 
 <div aria-hidden="true" class="order-modal" id="orderModal">
 <div aria-modal="true" class="order-modal__panel" role="dialog">
