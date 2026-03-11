@@ -876,6 +876,16 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            section {
+                padding-left: 3%;
+                padding-right: 3%;
+            }
+
+            .products-section {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -927,9 +937,11 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 0.9rem;
                 max-width: 100%;
-                margin: 0 auto;
+                margin: 0;
                 align-items: stretch;
                 width: 100%;
+                padding: 0 2%;
+                justify-items: stretch;
             }
 
             section {
