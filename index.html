@@ -426,7 +426,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 3rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -934,22 +934,20 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(2, 1fr);
                 gap: 0.9rem;
                 max-width: 100%;
                 margin: 0;
-                align-items: stretch;
                 width: 100%;
                 padding: 0;
-                justify-items: stretch;
             }
 
             .product-card:last-child:nth-child(odd) {
                 grid-column: 1 / -1;
-                max-width: calc(50% - 0.45rem);
+                width: 50%;
                 margin-left: auto;
                 margin-right: auto;
-                width: 100%;
+                justify-self: center;
             }
 
             section {
@@ -1763,7 +1761,7 @@ Hacé tu pedido
 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
-<a href="mailto:oliveryweb@gmail.com">oliveryweb@gmail.com</a>
+<a href="/cdn-cgi/l/email-protection#91fefdf8e7f4e3e8e6f4f3d1f6fcf0f8fdbff2fefc"><span class="__cf_email__" data-cfemail="c2adaeabb4a7b0bbb5a7a082a5afa3abaeeca1adaf">[email&#160;protected]</span></a>
 </div>
 </div>
 </div>
@@ -1776,7 +1774,7 @@ Hacé tu pedido
 <p>© 2026 Olivery. Todos los derechos reservados.</p>
 </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', () => {
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -2182,11 +2180,4 @@ Hacé tu pedido
 <p class="order-modal__meta">
       Cantidad: <strong id="orderModalQty"></strong> · Subtotal: <strong id="orderModalSubtotal"></strong>
 </p>
-<div class="order-modal__actions">
-<button class="btn-secondary" id="addMoreBtn" type="button">AÑADIR OTROS PRODUCTOS</button>
-<button class="btn-primary" id="finishOrderBtn" type="button">FINALIZAR PEDIDO</button>
-</div>
-</div>
-</div>
-</body>
-</html>
+<div cla
