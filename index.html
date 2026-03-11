@@ -1518,16 +1518,21 @@
                 }).join('\\n');
 
                 const message = [
-                    'Hola! Quiero realizar el pedido:',
+                    'Hola! 👋',
+                    'Soy cliente de Olivery y quiero confirmar este pedido:',
                     '',
+                    '🛒 Productos',
                     items,
                     '',
-                    `Total: ${total}`,
+                    `💰 Total: ${total}`,
                     '',
-                    `Nombre: ${buyerName}`,
-                    `Celular: ${buyerPhone}`,
-                    `Dirección: ${buyerAddress}`,
-                    `Día de entrega: ${deliveryDay}`
+                    '📦 Datos de entrega',
+                    `• Nombre: ${buyerName}`,
+                    `• Celular: ${buyerPhone}`,
+                    `• Dirección: ${buyerAddress}`,
+                    `• Día de entrega: ${deliveryDay}`,
+                    '',
+                    'Quedo atento/a a la confirmación. Gracias!'
                 ].join('\\n');
 
                 const url = `https://wa.me/5493512402359?text=${encodeURIComponent(message)}`;
