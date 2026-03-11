@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Olivery | Aceites de Oliva Premium</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --olive-dark: #2C3E2D;
+            --olive-medium: #4A5D4B;
+            --olive-light: #6B7E6C;
+            --gold: #C4A962;
+            --gold-light: #D4BC7A;
+            --cream: #F5F2EB;
+            --cream-dark: #E8E4DB;
+            --text-dark: #1A1A1A;
+            --text-light: #F5F2EB;
+            --glass-bg: rgba(245, 242, 235, 0.85);
+            --glass-border: rgba(196, 169, 98, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(196, 169, 98, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(74, 93, 75, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 40%, rgba(196, 169, 98, 0.05) 0%, transparent 40%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            letter-spacing: 0.1em;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--olive-dark);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 4% 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            color: var(--olive-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--olive-medium);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--olive-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            color: var(--olive-dark);
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 4%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            color: var(--olive-dark);
+        }
+
+        .section-title em {
+            font-style: italic;
+        }
+
+        /* Products Grid */
+        .products-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 0;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(44, 62, 45, 0.15);
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--olive-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-variety {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--olive-light);
+            margin-bottom: 1rem;
+        }
+
+        .product-size {
+            font-size: 0.85rem;
+            color: var(--olive-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--olive-light);
+        }
+
+        .btn-add {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--olive-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 2px solid var(--olive-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add:hover {
+            background: var(--olive-dark);
+            color: var(--text-light);
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid var(--olive-light);
+            color: var(--olive-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--olive-dark);
+            border-color: var(--olive-dark);
+            color: var(--text-light);
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--olive-dark);
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(196, 169, 98, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-section .section-label {
+            color: var(--gold-light);
+        }
+
+        .about-section .section-title {
+            color: var(--text-light);
+        }
+
+        .about-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 2;
+            color: rgba(245, 242, 235, 0.85);
+            margin-top: 2rem;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--gold);
+        }
+
+        .feature h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            color: rgba(245, 242, 235, 0.7);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--cream-dark);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+        }
+
+        .contact-item a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--olive-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: #25D366;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--olive-dark);
+            color: var(--text-light);
+            padding: 4rem 4% 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: rgba(245, 242, 235, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(245, 242, 235, 0.1);
+            font-size: 0.85rem;
+            color: rgba(245, 242, 235, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+        }
+
+        /* Animations on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        .qty-select {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--olive-medium);
+        }
+        .qty-select select {
+            padding: 0.45rem 0.7rem;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            color: var(--olive-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            outline: none;
+        }
+        .btn-add {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-add .wa-icon svg {
+            width: 1rem;
+            height: 1rem;
+        }
+        .selected-indicator {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: #b13a3a;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .product-card.is-selected .selected-indicator {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .order-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.35);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 2rem;
+        }
+        .order-modal.active {
+            display: flex;
+        }
+        .order-modal__panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            max-width: 540px;
+            width: min(92vw, 540px);
+            text-align: center;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .order-modal__label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.6rem;
+        }
+        .order-modal__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--olive-dark);
+        }
+        .order-modal__meta {
+            color: var(--olive-medium);
+            margin-bottom: 1.5rem;
+        }
+        .order-modal__actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-secondary {
+            padding: 0.9rem 1.6rem;
+            border: 1px solid var(--olive-dark);
+            background: transparent;
+            color: var(--olive-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-fast, all 0.3s ease);
+        }
+        .btn-secondary:hover {
+            background: var(--olive-dark);
+            color: var(--text-light);
+        }
+        .checkout-section {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: stretch;
+            justify-content: flex-end;
+            z-index: 2100;
+        }
+        .checkout-section.active {
+            display: flex;
+        }
+        .checkout-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.35);
+        }
+        .checkout-panel {
+            position: relative;
+            width: min(92vw, 520px);
+            height: 100%;
+            background: var(--glass-bg);
+            border-left: 1px solid var(--glass-border);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 2rem 2.5rem;
+            overflow-y: auto;
+        }
+        .checkout-panel__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .checkout-close {
+            border: none;
+            background: transparent;
+            font-size: 1.6rem;
+            color: var(--olive-dark);
+            cursor: pointer;
+            line-height: 1;
+        }
+        .checkout-panel__body {
+            display: grid;
+            gap: 1.8rem;
+        }
+        .checkout-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+        }
+        .checkout-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--olive-dark);
+            margin-bottom: 1rem;
+        }
+        .cart-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .cart-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.8rem;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.8rem;
+        }
+        .cart-item h4 {
+            font-size: 0.95rem;
+            color: var(--olive-dark);
+            margin-bottom: 0.3rem;
+        }
+        .cart-item small {
+            color: var(--olive-light);
+        }
+        .cart-item-actions {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+        }
+        .cart-item-actions select {
+            padding: 0.35rem 0.5rem;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+        }
+        .cart-remove {
+            border: none;
+            background: transparent;
+            color: #b13a3a;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--olive-dark);
+        }
+        .cart-empty {
+            font-size: 0.85rem;
+            color: var(--olive-light);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .checkout-confirm {
+            width: 100%;
+            margin-top: 1.2rem;
+        }
+        .checkout-form-card[hidden] {
+            display: none;
+        }
+        .checkout-form {
+            display: grid;
+            gap: 1rem;
+        }
+        .checkout-form label {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--olive-medium);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .checkout-form input,
+        .checkout-form select {
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--olive-dark);
+        }
+        .btn-pay {
+            padding: 1rem 2rem;
+            background: var(--olive-dark);
+            color: var(--text-light);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-fast, all 0.3s ease);
+        }
+        .btn-pay:hover {
+            background: var(--olive-medium);
+        }
+        @media (max-width: 720px) {
+            .order-modal__actions {
+                flex-direction: column;
+            }
+            .checkout-panel {
+                width: 100%;
+                padding: 1.5rem;
+            }
+            .checkout-panel__header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .checkout-card {
+                padding: 1.5rem;
+            }
+            .cart-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .cart-item-actions {
+                justify-content: flex-start;
+            }
+            .checkout-close {
+                align-self: flex-end;
+            }
+        }
+</style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<!-- Navigation -->
+<nav id="navbar">
+<a class="logo" href="#">Olivery<span>.</span></a>
+<ul class="nav-links">
+<li><a href="#productos">Productos</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-content">
+<p class="hero-tagline">Aceites de Oliva Premium</p>
+<h1>El Arte del <em>Olivo</em> en tu Mesa</h1>
+<p class="hero-description">
+                Descubrí nuestra selección curada de los mejores aceites de oliva virgen extra 
+                de Argentina y acetos balsámicos artesanales.
+            </p>
+<a class="btn-primary" href="#productos">Explorar Catálogo</a>
+</div>
+</section>
+<!-- Products Section -->
+<section class="products-section" id="productos">
+<div class="section-header">
+<p class="section-label">Nuestra Selección</p>
+<h2 class="section-title">Aceites <em>Premium</em></h2>
+</div>
+<div class="category-tabs">
+<button class="category-tab active" data-category="aceite">Aceites de Oliva</button>
+<button class="category-tab" data-category="aceto">Acetos</button>
+</div>
+<div class="products-grid">
+<!-- Casalta -->
+<!-- Oliovita Reducción -->
+<!-- Oliovita Mediterráneo -->
+<!-- Oliovita Clásico -->
+<!-- Tupelí 250 -->
+<!-- Laur -->
+<!-- Zuccardi Coratina -->
+<!-- Zuccardi Genovesa 250 -->
+<!-- Zuccardi Picual 250 -->
+<!-- Zuelo Original -->
+<!-- Hilal 500 -->
+<!-- Olei Aceto -->
+<!-- Tupelí 500 -->
+<!-- Hilal 500 (55-v) -->
+<!-- Olei Vasija -->
+<!-- Zuelo 500 -->
+<!-- Zuccardi Genovesa 500 -->
+<!-- El Mistol -->
+<!-- Hilal 1L -->
+<div class="product-card fade-in" data-category="aceite" data-name="Oliovita Mediterráneo 250ml" data-price="7035" data-product-id="oliovita-mediterraneo"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Oliovita Mediterráneo Virgen Extra x 250 ml" class="product-image" src="oliovita-mediterraneo.png"/>
+<p class="product-brand">Oliovita</p>
+<h3 class="product-name">Mediterráneo</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$7.035 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Oliovita Clásico 250ml" data-price="7665" data-product-id="oliovita-clasico"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Oliovita Clásico Virgen Extra x 250 ml" class="product-image" src="oliovita-clasico.png"/>
+<p class="product-brand">Oliovita</p>
+<h3 class="product-name">Clásico</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$7.665 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 250ml" data-price="9345" data-product-id="tupeli-250"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Tupelí Extra Virgen x 250 ml" class="product-image" src="tupeli-250.png"/>
+<p class="product-brand">Tupelí</p>
+<h3 class="product-name">Extra Virgen</h3>
+<p class="product-variety">Mendoza</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$9.345 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Laur Virgen Extra 250ml" data-price="11445" data-product-id="laur"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Laur Virgen Extra x 250 ml" class="product-image" src="laur.png"/>
+<p class="product-brand">Laur</p>
+<h3 class="product-name">Virgen Extra</h3>
+<p class="product-variety">Mendoza Argentina</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$11.445 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Coratina 250ml" data-price="11970" data-product-id="coratina_final"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Familia Zuccardi Coratina x 250 ml" class="product-image" src="coratina_final.png"/>
+<p class="product-brand">Familia Zuccardi</p>
+<h3 class="product-name">Coratina</h3>
+<p class="product-variety">Variedad Mendoza</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$11.970 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Genovesa 250ml" data-price="11970" data-product-id="genovesa_final"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Familia Zuccardi Genovesa x 250 ml" class="product-image" src="genovesa_final.png"/>
+<p class="product-brand">Familia Zuccardi</p>
+<h3 class="product-name">Genovesa</h3>
+<p class="product-variety">Variedad Mendoza</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$11.970 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Picual 250ml" data-price="11970" data-product-id="picual_final"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Familia Zuccardi Picual x 250 ml" class="product-image" src="picual_final.png"/>
+<p class="product-brand">Familia Zuccardi</p>
+<h3 class="product-name">Picual</h3>
+<p class="product-variety">Variedad Mendoza</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$11.970 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Zuelo Original 250ml" data-price="12285" data-product-id="zuelo-original"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Zuelo Virgen Extra Original x 250 ml" class="product-image" src="zuelo-original.png"/>
+<p class="product-brand">Zuelo</p>
+<h3 class="product-name">Original</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$12.285 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 500ml" data-price="13545" data-product-id="hilal"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Hilal Virgen Extra Blend Doña Sofía x 500 ml" class="product-image" src="hilal.png"/>
+<p class="product-brand">Hilal</p>
+<h3 class="product-name">Blend Doña Sofía</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$13.545 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 500ml" data-price="15435" data-product-id="tupeli-500"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Tupelí Extra Virgen x 500 ml" class="product-image" src="tupeli-500.png"/>
+<p class="product-brand">Tupelí</p>
+<h3 class="product-name">Extra Virgen</h3>
+<p class="product-variety">Mendoza</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$15.435 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 500ml" data-price="15960" data-product-id="hilal-55-v"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Hilal Virgen Extra Blend Doña Sofía x 500 ml" class="product-image" src="hilal-55-v.png"/>
+<p class="product-brand">Hilal</p>
+<h3 class="product-name">Blend Doña Sofía</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$15.960 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Olei &amp; Co. Vasija 250ml" data-price="18375" data-product-id="olei"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite de oliva Virgen Extra Olei&amp;Co en Vasija x 250 ml" class="product-image" src="olei.webp"/>
+<p class="product-brand">Olei &amp; Co.</p>
+<h3 class="product-name">Vasija</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$18.375 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Zuelo Blend Original 500ml" data-price="18480" data-product-id="zuelo-500"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Zuelo Virgen Extra Blend Original x 500 ml" class="product-image" src="zuelo-500.png"/>
+<p class="product-brand">Zuelo</p>
+<h3 class="product-name">Blend Original</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$18.480 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Genovesa 500ml" data-price="20895" data-product-id="genovesa-500"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Familia Zuccardi Genovesa x 500 ml" class="product-image" src="genovesa-500.png"/>
+<p class="product-brand">Familia Zuccardi</p>
+<h3 class="product-name">Genovesa</h3>
+<p class="product-variety">Variedad Mendoza</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$20.895 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="El Mistol Premium 500ml" data-price="21315" data-product-id="Mistol"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite de oliva Virgen Extra El Mistol Premium x 500 ml" class="product-image" src="Mistol.png"/>
+<p class="product-brand">El Mistol</p>
+<h3 class="product-name">Premium</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$21.315 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 1 Litro" data-price="25095" data-product-id="hilal-1L"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite Hilal Virgen Extra Blend Doña Sofía x 1000 ml" class="product-image" src="hilal-1L.png"/>
+<p class="product-brand">Hilal</p>
+<h3 class="product-name">Blend Doña Sofía</h3>
+<p class="product-variety">Virgen Extra</p>
+<p class="product-size">1 Litro</p>
+<p class="product-price">$25.095 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceto" data-name="Casalta Clásico 250ml" data-price="3500" data-product-id="casalta"><span class="selected-indicator">✓✓</span>
+<img alt="Aceto Balsámico Clásico Casalta x 250 ml" class="product-image" src="casalta.png"/>
+<p class="product-brand">Casalta</p>
+<h3 class="product-name">Clásico</h3>
+<p class="product-variety">Aceto Balsámico</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$3.500 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceto" data-name="Oliovita Aceto Balsámico 250ml" data-price="5040" data-product-id="oliovita"><span class="selected-indicator">✓✓</span>
+<img alt="Aceto Balsámico Oliovita Reducción x 250 ml" class="product-image" src="oliovita.png"/>
+<p class="product-brand">Oliovita</p>
+<h3 class="product-name">Aceto Balsámico</h3>
+<p class="product-variety">Reducción</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$5.040 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceto" data-name="Olei &amp; Co. Aceto Balsámico 250ml" data-price="15120" data-product-id="olei-aceto"><span class="selected-indicator">✓✓</span>
+<img alt="Aceto Balsámico Reducción Olei&amp;Co Vasija x 250 ml" class="product-image" src="olei-aceto.png"/>
+<p class="product-brand">Olei &amp; Co.</p>
+<h3 class="product-name">Aceto Balsámico</h3>
+<p class="product-variety">Reducción</p>
+<p class="product-size">250ml</p>
+<p class="product-price">$15.120 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div></div>
+</section>
+<section class="checkout-section" hidden="" id="checkout">
+<div class="checkout-overlay" id="checkoutOverlay"></div>
+<div class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+<div class="checkout-panel__header">
+<div>
+<p class="section-label">Finalizar Pedido</p>
+<h2 class="section-title" id="checkoutTitle">Tu <em>Pedido</em></h2>
+</div>
+<button class="checkout-close" id="checkoutClose" type="button" aria-label="Cerrar">×</button>
+</div>
+<div class="checkout-panel__body">
+<div class="checkout-card" id="checkoutSummary">
+<h3 class="checkout-title">Resumen</h3>
+<div class="cart-list" id="cartList"></div>
+<div class="cart-total">
+<span>Total a pagar</span>
+<strong id="cartTotalDisplay">$0 ARS</strong>
+</div>
+</div>
+<p class="cart-empty" id="cartEmpty" hidden="">Tu carrito está vacío.</p>
+<div class="checkout-card checkout-form-card" hidden="">
+<h3 class="checkout-title">Datos de Entrega</h3>
+<form class="checkout-form" id="checkoutForm">
+<label>Nombre del Comprador
+          <input name="buyerName" required="" type="text"/>
+</label>
+<label>Celular
+          <input name="buyerPhone" required="" type="tel"/>
+</label>
+<label>Dirección o lugar de entrega
+          <input name="buyerAddress" required="" type="text"/>
+</label>
+<label>Día de entrega
+          <select name="deliveryDay" required="">
+<option value="">Seleccionar día</option>
+<option>lunes</option>
+<option>martes</option>
+<option>miércoles</option>
+<option>jueves</option>
+<option>viernes</option>
+</select>
+</label>
+<label>Total a pagar
+          <input id="checkoutTotal" name="total" readonly="" type="text"/>
+</label>
+<button class="btn-pay" type="submit">EFECTUAR PAGO</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="nosotros">
+<div class="about-content">
+<p class="section-label">Sobre Nosotros</p>
+<h2 class="section-title">Pasión por lo <em>Auténtico</em></h2>
+<p class="about-text">
+                En Olivery seleccionamos cuidadosamente los mejores aceites de oliva virgen extra 
+                de las bodegas más prestigiosas de Argentina. Cada producto que ofrecemos cuenta 
+                una historia de tradición, tierra y dedicación artesanal.
+            </p>
+<div class="features">
+<div class="feature">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3>Calidad Premium</h3>
+<p>Solo trabajamos con productores certificados y premiados internacionalmente.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3>Envío a Domicilio</h3>
+<p>Entregamos en toda Córdoba con el cuidado que tus productos merecen.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3>Atención Personal</h3>
+<p>Te asesoramos para que encuentres el aceite perfecto para cada ocasión.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="contact-section" id="contacto">
+<div class="contact-content">
+<p class="section-label">Contacto</p>
+<h2 class="section-title">Hacé tu <em>Pedido</em></h2>
+<div class="contact-info">
+<div class="contact-item">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<a href="#">Córdoba, Argentina</a>
+</div>
+<div class="contact-item">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<a href="mailto:oliveryweb@gmail.com">oliveryweb@gmail.com</a>
+</div>
+</div>
+<a class="whatsapp-btn" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+                Pedí por WhatsApp
+            </a>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="footer-logo">Olivery<span>.</span></div>
+<p class="footer-tagline">Aceites de oliva premium para tu mesa</p>
+<div class="footer-bottom">
+<p>© 2026 Olivery. Todos los derechos reservados.</p>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Category filter
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const productCards = document.querySelectorAll('.product-card');
+
+        const applyFilter = (category) => {
+            productCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        };
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                applyFilter(tab.dataset.category);
+            });
+        });
+
+        // Apply initial filter (defaults to active tab)
+        const initialTab = document.querySelector('.category-tab.active') || categoryTabs[0];
+        if (initialTab) {
+            applyFilter(initialTab.dataset.category);
+        }
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    
+        const cartKey = 'oliveryCart';
+        const formatARS = (value) => `$${new Intl.NumberFormat('es-AR').format(value)} ARS`;
+        const loadCart = () => {
+            try {
+                return JSON.parse(localStorage.getItem(cartKey)) || {};
+            } catch {
+                return {};
+            }
+        };
+        const saveCart = (cart) => localStorage.setItem(cartKey, JSON.stringify(cart));
+
+        const orderModal = document.getElementById('orderModal');
+        const orderModalName = document.getElementById('orderModalName');
+        const orderModalQty = document.getElementById('orderModalQty');
+        const orderModalSubtotal = document.getElementById('orderModalSubtotal');
+        const addMoreBtn = document.getElementById('addMoreBtn');
+        const finishOrderBtn = document.getElementById('finishOrderBtn');
+        const checkoutSection = document.getElementById('checkout');
+        const checkoutOverlay = document.getElementById('checkoutOverlay');
+        const checkoutClose = document.getElementById('checkoutClose');
+        const checkoutForm = document.getElementById('checkoutForm');
+        const checkoutFormCard = document.querySelector('.checkout-form-card');
+        const checkoutSummary = document.getElementById('checkoutSummary');
+        const cartEmpty = document.getElementById('cartEmpty');
+        const cartList = document.getElementById('cartList');
+        const cartTotalDisplay = document.getElementById('cartTotalDisplay');
+        const checkoutTotal = document.getElementById('checkoutTotal');
+
+        let cart = loadCart();
+        let pendingItem = null;
+        let pendingCard = null;
+
+        const updateIndicators = () => {
+            document.querySelectorAll('.product-card').forEach(card => {
+                const id = card.dataset.productId;
+                if (cart[id]) {
+                    card.classList.add('is-selected');
+                } else {
+                    card.classList.remove('is-selected');
+                }
+            });
+        };
+
+        const renderCart = () => {
+            if (!cartList) return;
+            cartList.innerHTML = '';
+            let total = 0;
+            const items = Object.values(cart);
+            items.forEach(item => {
+                const itemSubtotal = item.price * item.qty;
+                total += itemSubtotal;
+                const row = document.createElement('div');
+                row.className = 'cart-item';
+                row.innerHTML = `
+                    <div>
+                        <h4>${item.name}</h4>
+                        <small>${formatARS(item.price)} · Subtotal ${formatARS(itemSubtotal)}</small>
+                    </div>
+                    <div class="cart-item-actions">
+                        <select data-id="${item.id}">
+                            ${Array.from({length:10},(_,i)=>`<option value="${i+1}" ${item.qty===i+1?'selected':''}>${i+1}</option>`).join('')}
+                        </select>
+                        <button class="cart-remove" data-id="${item.id}" aria-label="Eliminar">🗑</button>
+                    </div>
+                `;
+                cartList.appendChild(row);
+            });
+            cartTotalDisplay.textContent = formatARS(total);
+            checkoutTotal.value = formatARS(total);
+            if (checkoutSummary) {
+                checkoutSummary.hidden = items.length === 0;
+            }
+            if (cartEmpty) {
+                cartEmpty.hidden = items.length !== 0;
+            }
+        };
+
+        const openModal = () => {
+            if (!orderModal) return;
+            orderModal.classList.add('active');
+            orderModal.setAttribute('aria-hidden', 'false');
+        };
+        const closeModal = () => {
+            if (!orderModal) return;
+            orderModal.classList.remove('active');
+            orderModal.setAttribute('aria-hidden', 'true');
+        };
+
+        const openCheckout = () => {
+            if (!checkoutSection) return;
+            checkoutSection.hidden = false;
+            checkoutSection.classList.add('active');
+            if (checkoutFormCard) {
+                checkoutFormCard.hidden = false;
+            }
+        };
+
+        const closeCheckout = () => {
+            if (!checkoutSection) return;
+            checkoutSection.classList.remove('active');
+            checkoutSection.hidden = true;
+        };
+
+        const addPendingToCart = (openAfter = false) => {
+            if (!pendingItem) return;
+            const existing = cart[pendingItem.id];
+            if (existing) {
+                existing.qty += pendingItem.qty;
+            } else {
+                cart[pendingItem.id] = {...pendingItem};
+            }
+            saveCart(cart);
+            updateIndicators();
+            renderCart();
+            if (openAfter) {
+                openCheckout();
+            }
+        };
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            const btn = card.querySelector('.btn-add');
+            const qtySelect = card.querySelector('.qty-select select');
+            if (!btn || !qtySelect) return;
+            btn.addEventListener('click', () => {
+                const qty = parseInt(qtySelect.value, 10) || 1;
+                const price = parseInt(card.dataset.price || '0', 10);
+                const name = card.dataset.name;
+                pendingCard = card;
+                pendingItem = {
+                    id: card.dataset.productId,
+                    name,
+                    price,
+                    qty
+                };
+                orderModalName.textContent = name;
+                orderModalQty.textContent = qty;
+                orderModalSubtotal.textContent = formatARS(price * qty);
+                openModal();
+            });
+        });
+
+        if (addMoreBtn) {
+            addMoreBtn.addEventListener('click', () => {
+                addPendingToCart(false);
+                closeModal();
+                if (pendingCard) {
+                    const resetSelect = pendingCard.querySelector('.qty-select select');
+                    if (resetSelect) {
+                        resetSelect.value = '1';
+                    }
+                }
+                document.getElementById('productos')?.scrollIntoView({behavior: 'smooth'});
+            });
+        }
+
+        if (finishOrderBtn) {
+            finishOrderBtn.addEventListener('click', () => {
+                addPendingToCart(true);
+                closeModal();
+                if (pendingCard) {
+                    const resetSelect = pendingCard.querySelector('.qty-select select');
+                    if (resetSelect) {
+                        resetSelect.value = '1';
+                    }
+                }
+            });
+        }
+
+        if (checkoutOverlay) {
+            checkoutOverlay.addEventListener('click', closeCheckout);
+        }
+        if (checkoutClose) {
+            checkoutClose.addEventListener('click', closeCheckout);
+        }
+        if (checkoutForm) {
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(checkoutForm);
+                const buyerName = formData.get('buyerName');
+                const buyerPhone = formData.get('buyerPhone');
+                const buyerAddress = formData.get('buyerAddress');
+                const deliveryDay = formData.get('deliveryDay');
+                const total = checkoutTotal.value;
+
+                const items = Object.values(cart).map(item => {
+                    return `- ${item.name} x${item.qty} = ${formatARS(item.price * item.qty)}`;
+                }).join('\\n');
+
+                const message = [
+                    'Hola! Quiero realizar el pedido:',
+                    '',
+                    items,
+                    '',
+                    `Total: ${total}`,
+                    '',
+                    `Nombre: ${buyerName}`,
+                    `Celular: ${buyerPhone}`,
+                    `Dirección: ${buyerAddress}`,
+                    `Día de entrega: ${deliveryDay}`
+                ].join('\\n');
+
+                const url = `https://wa.me/5493512402359?text=${encodeURIComponent(message)}`;
+                cart = {};
+                saveCart(cart);
+                updateIndicators();
+                renderCart();
+                closeCheckout();
+                window.location.href = url;
+            });
+        }
+
+        if (cartList) {
+            cartList.addEventListener('change', (e) => {
+                const target = e.target;
+                if (target.tagName === 'SELECT') {
+                    const id = target.getAttribute('data-id');
+                    const qty = parseInt(target.value, 10) || 1;
+                    if (cart[id]) {
+                        cart[id].qty = qty;
+                        saveCart(cart);
+                        renderCart();
+                        updateIndicators();
+                    }
+                }
+            });
+            cartList.addEventListener('click', (e) => {
+                const btn = e.target.closest('.cart-remove');
+                if (!btn) return;
+                const id = btn.getAttribute('data-id');
+                delete cart[id];
+                saveCart(cart);
+                renderCart();
+                updateIndicators();
+            });
+        }
+
+        updateIndicators();
+        renderCart();
+        });
+</script>
+
+<div aria-hidden="true" class="order-modal" id="orderModal">
+<div aria-modal="true" class="order-modal__panel" role="dialog">
+<p class="order-modal__label">Producto agregado</p>
+<h3 class="order-modal__title" id="orderModalName"></h3>
+<p class="order-modal__meta">
+      Cantidad: <strong id="orderModalQty"></strong> · Subtotal: <strong id="orderModalSubtotal"></strong>
+</p>
+<div class="order-modal__actions">
+<button class="btn-secondary" id="addMoreBtn" type="button">AÑADIR OTROS PRODUCTOS</button>
+<button class="btn-primary" id="finishOrderBtn" type="button">FINALIZAR PEDIDO</button>
+</div>
+</div>
+</div>
+</body>
+</html>
