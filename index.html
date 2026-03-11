@@ -1515,7 +1515,7 @@
 
                 const items = Object.values(cart).map(item => {
                     return `- ${item.name} x${item.qty} = ${formatARS(item.price * item.qty)}`;
-                }).join('\\n');
+                }).join('\n');
 
                 const message = [
                     'Hola! 👋',
@@ -1533,7 +1533,7 @@
                     `• Día de entrega: ${deliveryDay}`,
                     '',
                     'Quedo atento/a a la confirmación. Gracias!'
-                ].join('\\n');
+                ].join('\n');
 
                 const url = `https://wa.me/5493512402359?text=${encodeURIComponent(message)}`;
                 cart = {};
