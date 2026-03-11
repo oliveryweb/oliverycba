@@ -172,32 +172,53 @@
             width: 100%;
         }
 
-        .whatsapp-cta {
+        .cart-trigger {
+            position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.55rem 0.9rem;
-            border-radius: 999px;
-            border: 1px solid rgba(37, 211, 102, 0.4);
-            background: rgba(37, 211, 102, 0.12);
-            color: var(--nav-text);
-            font-size: 0.65rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            pointer-events: auto;
+            justify-content: center;
+            padding: 0.6rem;
+            border-radius: 50%;
+            border: 1px solid var(--olive-dark);
+            background: transparent;
+            color: var(--olive-dark);
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .whatsapp-cta svg {
-            width: 16px;
-            height: 16px;
-            fill: #25D366;
+        .cart-trigger svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--olive-dark);
+            transition: fill 0.3s ease;
         }
 
-        .whatsapp-cta:hover {
-            transform: translateY(-1px);
+        .cart-trigger:hover {
+            transform: translateY(-2px);
+            background: var(--olive-dark);
+            color: var(--glass-bg);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .cart-trigger:hover svg {
+            fill: var(--glass-bg);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #b13a3a;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         /* Hero Section */
@@ -824,10 +845,8 @@
                 gap: 0.6rem;
             }
 
-            .whatsapp-cta {
-                padding: 0.5rem 0.7rem;
-                font-size: 0.55rem;
-                letter-spacing: 0.12em;
+            .cart-trigger {
+                padding: 0.5rem;
             }
 
             .nav-logo {
@@ -1365,9 +1384,8 @@
                 height: 44px;
                 border-radius: 10px;
             }
-            .whatsapp-cta {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.5rem;
+            .cart-trigger {
+                padding: 0.4rem;
             }
             .hero {
                 padding-top: 7rem;
@@ -1385,12 +1403,14 @@
 </div>
 <div class="nav-center">
 <img alt="Logo Olivery" class="nav-logo" src="logo.jpeg"/>
-<a aria-label="Hacé tu pedido por WhatsApp" class="whatsapp-cta" href="https://wa.me/5493512402359?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+<button aria-label="Ver carrito" class="cart-trigger" id="mainCartTrigger">
+<span class="cart-icon">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path>
 </svg>
-Hacé tu pedido
-</a>
+</span>
+<span class="cart-badge" id="cartBadgeCount">0</span>
+</button>
 </div>
 <div class="nav-right">
 
@@ -1449,7 +1469,7 @@ Hacé tu pedido
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">250ml</p>
 <p class="product-price">$7.035 <span>ARS</span></p>
-<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar al carrito<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
 </div><div class="product-card fade-in" data-category="aceite" data-name="Oliovita Clásico 250ml" data-price="7665" data-product-id="oliovita-clasico"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Oliovita Clásico Virgen Extra x 250 ml" class="product-image" src="oliovita-clasico.png"/>
 <p class="product-brand">Oliovita</p>
@@ -1457,7 +1477,7 @@ Hacé tu pedido
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">250ml</p>
 <p class="product-price">$7.665 <span>ARS</span></p>
-<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar al carrito<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
 </div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 250ml" data-price="9345" data-product-id="tupeli-250"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Tupelí Extra Virgen x 250 ml" class="product-image" src="tupeli-250.png"/>
 <p class="product-brand">Tupelí</p>
@@ -1956,7 +1976,15 @@ Hacé tu pedido
         let pendingItem = null;
         let pendingCard = null;
 
+        const cartBadgeCount = document.getElementById('cartBadgeCount');
         const updateIndicators = () => {
+            let totalItems = 0;
+            Object.values(cart).forEach(item => totalItems += parseInt(item.qty, 10));
+            if (cartBadgeCount) {
+                cartBadgeCount.textContent = totalItems;
+                cartBadgeCount.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+            
             document.querySelectorAll('.product-card').forEach(card => {
                 const id = card.dataset.productId;
                 if (cart[id]) {
@@ -2097,6 +2125,13 @@ Hacé tu pedido
         }
         if (checkoutClose) {
             checkoutClose.addEventListener('click', closeCheckout);
+        }
+        const mainCartTrigger = document.getElementById('mainCartTrigger');
+        if (mainCartTrigger) {
+            mainCartTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                openCheckout();
+            });
         }
         if (checkoutForm) {
             checkoutForm.addEventListener('submit', (e) => {
