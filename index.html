@@ -104,20 +104,23 @@
         }
 
         .nav-logo {
-            width: 52px;
-            height: 52px;
+            width: 120px;
+            height: 120px;
             object-fit: contain;
-            border-radius: 14px;
-            padding: 4px;
+            border-radius: 24px;
+            padding: 8px;
             background: var(--glass-bg);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22),
+                        0 6px 12px rgba(0, 0, 0, 0.12),
+                        inset 0 2px 6px rgba(255, 255, 255, 0.45);
             flex-shrink: 0;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
-            margin: -14px 0.8rem -14px 0.8rem;
+            margin: -18px 1.2rem -10px 1.2rem;
             position: relative;
             z-index: 2;
+            transform: translateY(12px);
+            border: 2px solid var(--gold);
         }
 
         /* Cart trigger */
@@ -243,6 +246,7 @@
             color: var(--gold);
             letter-spacing: 0.3em;
             text-transform: uppercase;
+            margin-top: 5rem;
             margin-bottom: 1.5rem;
         }
 
