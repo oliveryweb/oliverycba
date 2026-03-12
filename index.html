@@ -368,6 +368,48 @@
             overflow: hidden;
         }
 
+        .product-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: var(--olive-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(32, 51, 33, 0.2);
+            animation: promoPulse 2.2s ease-in-out infinite;
+        }
+
+        @keyframes promoPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.07);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .promo-note {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--olive-medium);
+            margin-top: -0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
         .product-card::before {
             content: '';
             position: absolute;
@@ -1550,157 +1592,177 @@
 <!-- Zuccardi Genovesa 500 -->
 <!-- El Mistol -->
 <!-- Hilal 1L -->
-<div class="product-card fade-in" data-category="aceite" data-name="Oliovita Mediterráneo 250ml" data-price="7035" data-product-id="oliovita-mediterraneo"><span class="selected-indicator">✓✓</span>
+<!-- Olei Jarra 500 -->
+<div class="product-card fade-in full-width" data-category="aceite" data-name="Aceite de oliva Virgen Extra Olei&amp;Co en Vasija x 250 ml + Aceto Balsámico Reducción Olei&amp;Co Vasija x 250 ml + bolsita de tela de transporte" data-price="29900" data-product-id="olei-duo"><span class="selected-indicator">✓✓</span>
+<span class="promo-badge">Promo Limitada</span>
+<img alt="Combo Olei&amp;Co Vasija aceite y aceto balsámico x 250 ml" class="product-image" src="duo.png"/>
+<p class="product-brand">Olei &amp; Co.</p>
+<h3 class="product-name">Dúo Vasija</h3>
+<p class="product-variety">Virgen Extra + Aceto Balsámico Reducción · Incluye bolsita de tela de transporte</p>
+<p class="product-size">Combo 2 x 250ml</p>
+<p class="product-price">$29.900 <span>ARS</span></p>
+<p class="promo-note">Productos descriptos más abajo</p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option></select></div><button class="btn-add">Agregar al carrito<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div>
+<div class="product-card fade-in" data-category="aceite" data-name="Oliovita Mediterráneo 250ml" data-price="6700" data-product-id="oliovita-mediterraneo"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Oliovita Mediterráneo Virgen Extra x 250 ml" class="product-image" src="oliovita-mediterraneo.png"/>
 <p class="product-brand">Oliovita</p>
 <h3 class="product-name">Mediterráneo</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$7.035 <span>ARS</span></p>
+<p class="product-price">$6.700 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar al carrito<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Oliovita Clásico 250ml" data-price="7665" data-product-id="oliovita-clasico"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Oliovita Clásico 250ml" data-price="7300" data-product-id="oliovita-clasico"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Oliovita Clásico Virgen Extra x 250 ml" class="product-image" src="oliovita-clasico.png"/>
 <p class="product-brand">Oliovita</p>
 <h3 class="product-name">Clásico</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$7.665 <span>ARS</span></p>
+<p class="product-price">$7.300 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar al carrito<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 250ml" data-price="9345" data-product-id="tupeli-250"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 250ml" data-price="8900" data-product-id="tupeli-250"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Tupelí Extra Virgen x 250 ml" class="product-image" src="tupeli-250.png"/>
 <p class="product-brand">Tupelí</p>
 <h3 class="product-name">Extra Virgen</h3>
 <p class="product-variety">Mendoza</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$9.345 <span>ARS</span></p>
+<p class="product-price">$8.900 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Laur Virgen Extra 250ml" data-price="11445" data-product-id="laur"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Laur Virgen Extra 250ml" data-price="10900" data-product-id="laur"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Laur Virgen Extra x 250 ml" class="product-image" src="laur.png"/>
 <p class="product-brand">Laur</p>
 <h3 class="product-name">Virgen Extra</h3>
 <p class="product-variety">Mendoza Argentina</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$11.445 <span>ARS</span></p>
+<p class="product-price">$10.900 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Coratina 250ml" data-price="11970" data-product-id="coratina_final"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Coratina 250ml" data-price="11400" data-product-id="coratina_final"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Familia Zuccardi Coratina x 250 ml" class="product-image" src="coratina_final.png"/>
 <p class="product-brand">Familia Zuccardi</p>
 <h3 class="product-name">Coratina</h3>
 <p class="product-variety">Variedad Mendoza</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$11.970 <span>ARS</span></p>
+<p class="product-price">$11.400 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Genovesa 250ml" data-price="11970" data-product-id="genovesa_final"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Genovesa 250ml" data-price="11400" data-product-id="genovesa_final"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Familia Zuccardi Genovesa x 250 ml" class="product-image" src="genovesa_final.png"/>
 <p class="product-brand">Familia Zuccardi</p>
 <h3 class="product-name">Genovesa</h3>
 <p class="product-variety">Variedad Mendoza</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$11.970 <span>ARS</span></p>
+<p class="product-price">$11.400 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Picual 250ml" data-price="11970" data-product-id="picual_final"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Picual 250ml" data-price="11400" data-product-id="picual_final"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Familia Zuccardi Picual x 250 ml" class="product-image" src="picual_final.png"/>
 <p class="product-brand">Familia Zuccardi</p>
 <h3 class="product-name">Picual</h3>
 <p class="product-variety">Variedad Mendoza</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$11.970 <span>ARS</span></p>
+<p class="product-price">$11.400 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Zuelo Original 250ml" data-price="12285" data-product-id="zuelo-original"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Zuelo Original 250ml" data-price="11700" data-product-id="zuelo-original"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Zuelo Virgen Extra Original x 250 ml" class="product-image" src="zuelo-original.png"/>
 <p class="product-brand">Zuelo</p>
 <h3 class="product-name">Original</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$12.285 <span>ARS</span></p>
+<p class="product-price">$11.700 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 500ml" data-price="13545" data-product-id="hilal"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 500ml" data-price="12900" data-product-id="hilal"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Hilal Virgen Extra Blend Doña Sofía x 500 ml" class="product-image" src="hilal.png"/>
 <p class="product-brand">Hilal</p>
 <h3 class="product-name">Blend Doña Sofía</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">500ml</p>
-<p class="product-price">$13.545 <span>ARS</span></p>
+<p class="product-price">$12.900 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 500ml" data-price="15435" data-product-id="tupeli-500"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Tupelí Extra Virgen 500ml" data-price="14700" data-product-id="tupeli-500"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Tupelí Extra Virgen x 500 ml" class="product-image" src="tupeli-500.png"/>
 <p class="product-brand">Tupelí</p>
 <h3 class="product-name">Extra Virgen</h3>
 <p class="product-variety">Mendoza</p>
 <p class="product-size">500ml</p>
-<p class="product-price">$15.435 <span>ARS</span></p>
+<p class="product-price">$14.700 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 500ml" data-price="15960" data-product-id="hilal-55-v"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 500ml" data-price="15200" data-product-id="hilal-55-v"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Hilal Virgen Extra Blend Doña Sofía x 500 ml" class="product-image" src="hilal-55-v.png"/>
 <p class="product-brand">Hilal</p>
 <h3 class="product-name">Blend Doña Sofía</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">500ml</p>
-<p class="product-price">$15.960 <span>ARS</span></p>
+<p class="product-price">$15.200 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Olei &amp; Co. Vasija 250ml" data-price="18375" data-product-id="olei"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Olei &amp; Co. Vasija 250ml" data-price="17500" data-product-id="olei"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite de oliva Virgen Extra Olei&amp;Co en Vasija x 250 ml" class="product-image" src="olei.webp"/>
 <p class="product-brand">Olei &amp; Co.</p>
 <h3 class="product-name">Vasija</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$18.375 <span>ARS</span></p>
+<p class="product-price">$17.500 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Zuelo Blend Original 500ml" data-price="18480" data-product-id="zuelo-500"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Zuelo Blend Original 500ml" data-price="17600" data-product-id="zuelo-500"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Zuelo Virgen Extra Blend Original x 500 ml" class="product-image" src="zuelo-500.png"/>
 <p class="product-brand">Zuelo</p>
 <h3 class="product-name">Blend Original</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">500ml</p>
-<p class="product-price">$18.480 <span>ARS</span></p>
+<p class="product-price">$17.600 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Genovesa 500ml" data-price="20895" data-product-id="genovesa-500"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Familia Zuccardi Genovesa 500ml" data-price="19900" data-product-id="genovesa-500"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Familia Zuccardi Genovesa x 500 ml" class="product-image" src="genovesa-500.png"/>
 <p class="product-brand">Familia Zuccardi</p>
 <h3 class="product-name">Genovesa</h3>
 <p class="product-variety">Variedad Mendoza</p>
 <p class="product-size">500ml</p>
-<p class="product-price">$20.895 <span>ARS</span></p>
+<p class="product-price">$19.900 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="El Mistol Premium 500ml" data-price="21315" data-product-id="Mistol"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="El Mistol Premium 500ml" data-price="20300" data-product-id="Mistol"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite de oliva Virgen Extra El Mistol Premium x 500 ml" class="product-image" src="Mistol.png"/>
 <p class="product-brand">El Mistol</p>
 <h3 class="product-name">Premium</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">500ml</p>
-<p class="product-price">$21.315 <span>ARS</span></p>
+<p class="product-price">$20.300 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 1 Litro" data-price="25095" data-product-id="hilal-1L"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Hilal Blend Doña Sofía 1 Litro" data-price="23900" data-product-id="hilal-1L"><span class="selected-indicator">✓✓</span>
 <img alt="Aceite Hilal Virgen Extra Blend Doña Sofía x 1000 ml" class="product-image" src="hilal-1L.png"/>
 <p class="product-brand">Hilal</p>
 <h3 class="product-name">Blend Doña Sofía</h3>
 <p class="product-variety">Virgen Extra</p>
 <p class="product-size">1 Litro</p>
-<p class="product-price">$25.095 <span>ARS</span></p>
+<p class="product-price">$23.900 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceto" data-name="Casalta Clásico 250ml" data-price="3500" data-product-id="casalta"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceite" data-name="Aceite de oliva Extra Virgen Blend Jarra Olei&amp;Co x 500 ml" data-price="29900" data-product-id="olei-500"><span class="selected-indicator">✓✓</span>
+<img alt="Aceite de oliva Extra Virgen Blend Jarra Olei&amp;Co x 500 ml" class="product-image" src="olei-500.png"/>
+<p class="product-brand">Olei &amp; Co.</p>
+<h3 class="product-name">Jarra</h3>
+<p class="product-variety">Extra Virgen Blend · Origen Mendoza · Bolsita de tela de regalo</p>
+<p class="product-size">500ml</p>
+<p class="product-price">$29.900 <span>ARS</span></p>
+<div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
+</div><div class="product-card fade-in" data-category="aceto" data-name="Casalta Clásico 250ml" data-price="4000" data-product-id="casalta"><span class="selected-indicator">✓✓</span>
 <img alt="Aceto Balsámico Clásico Casalta x 250 ml" class="product-image" src="casalta.png"/>
 <p class="product-brand">Casalta</p>
 <h3 class="product-name">Clásico</h3>
 <p class="product-variety">Aceto Balsámico</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$3.500 <span>ARS</span></p>
+<p class="product-price">$4.000 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceto" data-name="Oliovita Aceto Balsámico 250ml" data-price="5040" data-product-id="oliovita"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceto" data-name="Oliovita Aceto Balsámico 250ml" data-price="4800" data-product-id="oliovita"><span class="selected-indicator">✓✓</span>
 <img alt="Aceto Balsámico Oliovita Reducción x 250 ml" class="product-image" src="oliovita.png"/>
 <p class="product-brand">Oliovita</p>
 <h3 class="product-name">Aceto Balsámico</h3>
 <p class="product-variety">Reducción</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$5.040 <span>ARS</span></p>
+<p class="product-price">$4.800 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
-</div><div class="product-card fade-in" data-category="aceto" data-name="Olei &amp; Co. Aceto Balsámico 250ml" data-price="15120" data-product-id="olei-aceto"><span class="selected-indicator">✓✓</span>
+</div><div class="product-card fade-in" data-category="aceto" data-name="Olei &amp; Co. Aceto Balsámico 250ml" data-price="14400" data-product-id="olei-aceto"><span class="selected-indicator">✓✓</span>
 <img alt="Aceto Balsámico Reducción Olei&amp;Co Vasija x 250 ml" class="product-image" src="olei-aceto.png"/>
 <p class="product-brand">Olei &amp; Co.</p>
 <h3 class="product-name">Aceto Balsámico</h3>
 <p class="product-variety">Reducción</p>
 <p class="product-size">250ml</p>
-<p class="product-price">$15.120 <span>ARS</span></p>
+<p class="product-price">$14.400 <span>ARS</span></p>
 <div class="qty-select"><span>Cantidad</span><select aria-label="Seleccionar cantidad"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><button class="btn-add">Agregar a WhatsApp<span aria-hidden="true" class="wa-icon"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span></button>
 </div></div>
 </section>
