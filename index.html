@@ -64,147 +64,86 @@
                 radial-gradient(ellipse at 60% 40%, rgba(196, 169, 98, 0.05) 0%, transparent 40%);
         }
 
-        /* Navigation */
-        nav {
+        /* ============================================
+           HEADER — fixed top bar + nav links
+           ============================================ */
+        #siteHeader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1rem 4%;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
             z-index: 1000;
-            transition: all 0.4s ease;
+            background: var(--cream);
+            border-bottom: 1px solid rgba(185, 144, 63, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+        #siteHeader.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
         }
 
-        nav.scrolled {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-left {
+        /* Top bar: Olivery. | logo img | cart */
+        .header-top {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
+            justify-content: space-between;
+            padding: 0.6rem 5%;
+            gap: 1rem;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 600;
-            color: var(--nav-text);
-            letter-spacing: 0.1em;
+            color: var(--olive-dark);
+            letter-spacing: 0.08em;
             text-decoration: none;
+            flex-shrink: 0;
         }
-
         .logo span {
             color: var(--gold);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--nav-text);
-            text-decoration: none;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-
-
-        .nav-center {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 0.75rem;
-            pointer-events: none;
-        }
-
         .nav-logo {
-            width: 64px;
-            height: 64px;
+            width: 44px;
+            height: 44px;
             object-fit: contain;
-            border-radius: 16px;
-            padding: 6px;
-            box-shadow:
-                0 10px 24px rgba(0, 0, 0, 0.18),
-                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            padding: 3px;
             background: var(--glass-bg);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
         }
 
-        .nav-logo:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow:
-                0 16px 32px rgba(0, 0, 0, 0.22),
-                inset 0 1px 0 rgba(255, 255, 255, 0.35);
-        }
-
-        .nav-right {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 1.6rem;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+        /* Cart trigger */
         .cart-trigger {
             position: relative;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.6rem;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            border: 1px solid var(--olive-dark);
+            border: 1.5px solid var(--olive-dark);
             background: transparent;
             color: var(--olive-dark);
             cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
         }
-
         .cart-trigger svg {
             width: 20px;
             height: 20px;
             fill: var(--olive-dark);
-            transition: fill 0.3s ease;
+            transition: fill 0.25s ease;
         }
-
-        .cart-trigger:hover {
-            transform: translateY(-2px);
+        .cart-trigger:hover,
+        .cart-trigger:active {
             background: var(--olive-dark);
-            color: var(--glass-bg);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         }
-
-        .cart-trigger:hover svg {
-            fill: var(--glass-bg);
+        .cart-trigger:hover svg,
+        .cart-trigger:active svg {
+            fill: var(--cream);
         }
 
         .cart-badge {
@@ -213,15 +152,54 @@
             right: -4px;
             background: #b13a3a;
             color: #fff;
-            font-size: 0.65rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
             font-weight: 700;
             border-radius: 50%;
             width: 18px;
             height: 18px;
-            display: flex;
+            display: none; /* hidden when 0 */
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            line-height: 1;
+        }
+
+        /* Nav links row */
+        .header-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.45rem 5%;
+            border-top: 1px solid rgba(185, 144, 63, 0.1);
+        }
+        .header-nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--olive-dark);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.2rem 0;
+            position: relative;
+            transition: color 0.25s ease;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        .header-nav a:hover {
+            color: var(--gold);
+        }
+        .header-nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
@@ -230,7 +208,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 7rem 4% 4rem;
+            padding: 8.5rem 4% 3rem;
             position: relative;
         }
 
@@ -1140,38 +1118,7 @@
         .btn-pay:hover {
             background: var(--olive-medium);
         }
-        /* Hamburger Menu */
-        .hamburger-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 36px;
-            height: 36px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            z-index: 1001;
-        }
-        .hamburger-btn span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--olive-dark);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        .hamburger-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+
 
         
         /* ============================================
@@ -1179,114 +1126,49 @@
            Tested: 320px / 375px / 390px / 430px
            ============================================ */
 
-        /* Hamburger Menu */
-        .hamburger-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 40px;
-            height: 40px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 6px;
-            z-index: 1010;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .hamburger-btn span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--olive-dark);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        }
-        .hamburger-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+
 
         @media (max-width: 768px) {
-            /* — NAV — */
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                gap: 0.5rem;
-                padding: 0.6rem 3% !important;
-            }
-            .nav-left {
-                order: 1;
-                flex: 0 0 auto;
-            }
-            .nav-center {
-                order: 2;
-                flex: 0 0 auto;
-                gap: 0.4rem;
-            }
-            .nav-right {
-                order: 3;
-                flex: 0 0 auto;
-                gap: 0.8rem;
-            }
-            .nav-links {
-                order: 4;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.4rem 1rem;
-                margin: 0;
-                padding: 0.3rem 0 0;
-                width: 100%;
-                flex-basis: 100%;
-                list-style: none;
-            }
-            .nav-links a {
-                font-size: 0.65rem;
-                letter-spacing: 0.06em;
-                white-space: nowrap;
+            /* — HEADER — */
+            .header-top {
+                padding: 0.5rem 4%;
             }
             .logo {
-                font-size: 1.3rem;
-                letter-spacing: 0.05em;
+                font-size: 1.25rem;
             }
             .nav-logo {
-                width: 40px;
-                height: 40px;
-                border-radius: 10px;
-                padding: 3px;
+                width: 36px;
+                height: 36px;
+                border-radius: 8px;
             }
             .cart-trigger {
-                padding: 0.4rem;
+                width: 36px;
+                height: 36px;
             }
             .cart-trigger svg {
-                width: 18px;
-                height: 18px;
+                width: 17px;
+                height: 17px;
             }
             .cart-badge {
                 width: 16px;
                 height: 16px;
-                font-size: 0.55rem;
+                font-size: 0.5rem;
                 top: -3px;
                 right: -3px;
             }
-            .hamburger-btn {
-                display: none; /* Links visible inline, no hamburger needed */
+            .header-nav {
+                gap: 1rem;
+                padding: 0.35rem 3%;
+            }
+            .header-nav a {
+                font-size: 0.6rem;
+                letter-spacing: 0.06em;
             }
 
             /* — HERO — */
             .hero {
                 min-height: auto;
-                padding: 5rem 5% 2.5rem;
+                padding: 7rem 5% 2rem;
             }
             .hero-tagline {
                 font-size: 0.8rem;
@@ -1529,10 +1411,11 @@
         /* Extra small — 320px specific fixes */
         @media (max-width: 359px) {
             .logo {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
-            .nav-links a {
-                font-size: 0.55rem;
+            .header-nav a {
+                font-size: 0.52rem;
+                letter-spacing: 0.04em;
             }
             .product-image {
                 height: 95px;
@@ -1561,32 +1444,27 @@
 </head>
 <body>
 <div class="bg-pattern"></div>
-<!-- Navigation -->
-<nav id="navbar">
-<div class="nav-left">
-<a class="logo" href="#">Olivery<span>.</span></a>
-</div>
-<div class="nav-center">
-<img alt="Logo Olivery" class="nav-logo" src="logo.jpeg"/>
-<button aria-label="Ver carrito" class="cart-trigger" id="mainCartTrigger">
-<span class="cart-icon">
-<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
-    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path>
-</svg>
-</span>
-<span class="cart-badge" id="cartBadgeCount">0</span>
-</button>
-</div>
-<div class="nav-right">
-
-<ul class="nav-links">
-<li><a href="#productos">Productos</a></li>
-<li><a href="#nosotros">Nosotros</a></li>
-<li><a href="#premios">Premios</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-</div>
-</nav>
+<!-- Header -->
+<header id="siteHeader">
+  <!-- Top bar: Logo text | Logo image | Cart -->
+  <div class="header-top">
+    <a class="logo" href="#">Olivery<span>.</span></a>
+    <img alt="Logo Olivery" class="nav-logo" src="logo.jpeg"/>
+    <button aria-label="Ver carrito" class="cart-trigger" id="mainCartTrigger" type="button">
+      <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" width="22" height="22">
+        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+      </svg>
+      <span class="cart-badge" id="cartBadgeCount">0</span>
+    </button>
+  </div>
+  <!-- Nav links row -->
+  <nav class="header-nav" id="navbar">
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#premios">Premios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
 <!-- Hero Section -->
 <section class="hero">
 <div class="hero-content">
@@ -1983,15 +1861,18 @@
 
 
 
-        // Navbar scroll effect
+        // Header scroll effect
+        const siteHeader = document.getElementById('siteHeader');
         const navbar = document.getElementById('navbar');
 
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            if (siteHeader) {
+                if (window.scrollY > 30) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
             }
         });
 
